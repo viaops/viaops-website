@@ -1,5 +1,5 @@
-baseurl = "http://www.example.com" # Hostname (and path) to the root.
-title = "Yusuke Ishimi" # Site title.
+baseurl = "https://www.viaops.com" # Hostname (and path) to the root.
+title = "ViaOps" # Site title.
 theme = "coder-portfolio" # Set the theme.
 languagecode = "en" # The site’s language code used to generate RSS.
 defaultcontentlanguage = "en" # The default content language.
@@ -14,9 +14,9 @@ pygmentsUseClasses = true # new add
 disqusShortname = "yourdiscussshortname" # Enable or disable Disqus.
 
 [params] # theme parameters
-    author = "Yusuke Ishimi" # Author's name.
-    info = "WEB AND APPS ENGINEER" # Author's job title or info.
-    description = "Yusuke Ishimi's personal website" # Site description.
+    author = "viaops" # Author's name.
+    info = "DevOps/SRE Incubator" # Author's job title or info.
+    description = "ViaOps Website" # Site description.
     keywords = "blog,developer,personal" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
@@ -57,22 +57,22 @@ disqusShortname = "yourdiscussshortname" # Enable or disable Disqus.
     name = "Github"
     icon = "fab fa-github"
     weight = 1
-    url = "https://github.com/naro143/"
+    url = "https://github.com/viaops/"
 [[params.social]]
     name = "Twitter"
     icon = "fab fa-twitter"
     weight = 2
-    url = "https://twitter.com/naro143/"
+    url = "https://twitter.com/viaops/"
 [[params.social]]
     name = "LinkedIn"
     icon = "fab fa-linkedin"
     weight = 3
-    url = "https://www.linkedin.com/in/naro143/"
+    url = "https://www.linkedin.com/in/viaops/"
 [[params.social]]
     # If icon is not set, Text is displayed.
     name = "LinkedIn"
     weight = 4
-    url = "https://www.linkedin.com/in/naro143/"
+    url = "https://www.linkedin.com/in/viaops/"
 
 # Menu links
 [[menu.main]]
