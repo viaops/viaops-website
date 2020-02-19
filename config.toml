@@ -17,7 +17,7 @@ disqusShortname = "yourdiscussshortname" # Enable or disable Disqus.
     author = "viaops" # Author's name.
     info = "DevOps/SRE Incubator" # Author's job title or info.
     description = "ViaOps Website" # Site description.
-    keywords = "blog,developer,personal" # Site keywords.
+    keywords = "blog,devops/sre" # Site keywords.
     avatarurl = "images/avatar.jpg" # Contain the path of the optionnal avatar in the static folder.
 
     footercontent = "Enter a text here." # Add footer content
