@@ -1,5 +1,5 @@
 ---
-title: "First Poist"
+title: "First Post"
 date: 2019-06-04T21:55:06+01:00
 draft: false
 ---
@@ -8,7 +8,7 @@ draft: false
 
 This is the first post
 
-```bash
+```bash 
 
 #!/bin/bash
 
