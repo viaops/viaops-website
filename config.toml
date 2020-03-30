@@ -1,4 +1,4 @@
-baseURL = "https://viaops.com/"
+baseURL = "https://www.viaops.com/"
 languageCode = "en-us"
 title = "ViaOps"
 theme = "minimal"
