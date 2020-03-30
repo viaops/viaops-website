@@ -6,5 +6,4 @@
 <br />
 
 ### Upcoming 
-build the api
-sync with the api
+Update some of the site
