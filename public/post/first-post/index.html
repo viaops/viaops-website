@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 
 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css"> 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/Solarized%20Dark.min.css"> 
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -144,22 +144,25 @@
     </div>
 
     <div align="start" class="content"><p>This is the first post</p>
-<p>{{highlight bash}}</p>
-<p>#!/bin/bash</p>
-<h6 id="config">CONFIG</h6>
-<p>ACCEPTED_HOSTS=&rdquo;/root/.hag_accepted.conf&rdquo;
-BE_VERBOSE=false</p>
-<p>if [ &ldquo;$UID&rdquo; -ne 0 ]
-then
-echo &ldquo;Superuser rights required&rdquo;
-exit 2
-fi</p>
-<p>genApacheConf(){
-echo -e &ldquo;# Host ${HOME_DIR}$1/$2 :&rdquo;
-}</p>
-<p>echo &lsquo;&ldquo;quoted&rdquo;&rsquo; | tr -d &quot; &gt; text.txt</p>
-<p>{{endhighlight}}</p>
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<span style="color:#75715e">#!/bin/bash</span>
+
+<span style="color:#75715e">###### CONFIG</span>
+ACCEPTED_HOSTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/root/.hag_accepted.conf&#34;</span>
+BE_VERBOSE<span style="color:#f92672">=</span>false
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$UID<span style="color:#e6db74">&#34;</span> -ne <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+ echo <span style="color:#e6db74">&#34;Superuser rights required&#34;</span>
+ exit <span style="color:#ae81ff">2</span>
+<span style="color:#66d9ef">fi</span>
+
+genApacheConf<span style="color:#f92672">(){</span>
+ echo -e <span style="color:#e6db74">&#34;# Host </span><span style="color:#e6db74">${</span>HOME_DIR<span style="color:#e6db74">}</span>$1<span style="color:#e6db74">/</span>$2<span style="color:#e6db74"> :&#34;</span>
+<span style="color:#f92672">}</span>
+
+echo <span style="color:#e6db74">&#39;&#34;quoted&#34;&#39;</span> | tr -d <span style="color:#ae81ff">\&#34;</span> &gt; text.txt
+</code></pre></div></div>
 
     
     

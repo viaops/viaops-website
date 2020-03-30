@@ -18,13 +18,17 @@
       
       <guid>https://www.viaops.com/post/first-post/</guid>
       <description>This is the first post
-{{highlight bash}}
-#!/bin/bash
-CONFIG ACCEPTED_HOSTS=&amp;rdquo;/root/.hag_accepted.conf&amp;rdquo; BE_VERBOSE=false
-if [ &amp;ldquo;$UID&amp;rdquo; -ne 0 ] then echo &amp;ldquo;Superuser rights required&amp;rdquo; exit 2 fi
-genApacheConf(){ echo -e &amp;ldquo;# Host ${HOME_DIR}$1/$2 :&amp;rdquo; }
-echo &amp;lsquo;&amp;ldquo;quoted&amp;rdquo;&amp;rsquo; | tr -d &amp;quot; &amp;gt; text.txt
-{{endhighlight}}</description>
+#!/bin/bash ###### CONFIG ACCEPTED_HOSTS=&amp;#34;/root/.hag_accepted.conf&amp;#34; BE_VERBOSE=false if [ &amp;#34;$UID&amp;#34; -ne 0 ] then echo &amp;#34;Superuser rights required&amp;#34; exit 2 fi genApacheConf(){ echo -e &amp;#34;# Host ${HOME_DIR}$1/$2:&amp;#34; } echo &amp;#39;&amp;#34;quoted&amp;#34;&amp;#39; | tr -d \&amp;#34; &amp;gt; text.txt </description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi K3s Setup</title>
+      <link>https://www.viaops.com/post/raspberrypi-k3s/</link>
+      <pubDate>Tue, 04 Jun 2019 21:55:06 +0100</pubDate>
+      
+      <guid>https://www.viaops.com/post/raspberrypi-k3s/</guid>
+      <description>For a while now I was after getting my own self hosted Kubernetes cluster, and with the Raspberry Pi it is now possible. This is a note to self in case I will have to replicate What you need (Must Haves)
+ Raspberry PI (2/3). Minimum of 2 (1 master and 1 worker) Power Cable (Micro USB, same as the old android chargers) Ethernet Cable (Can be done with wireless, but ethernet cable makes it easier) Micro SD Card (Minimum of 8gb)  What you want (Nice to have)</description>
     </item>
     
   </channel>

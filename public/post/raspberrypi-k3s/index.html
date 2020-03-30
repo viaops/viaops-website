@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Raspberry Pi K3s Setup</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Inconsolata', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: blue;
+        --border-width:  0 ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://www.viaops.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/Solarized%20Dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.68.0" />
+        
+
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162103303-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments)};
+              gtag('js', new Date());
+              gtag('config', 'UA-162103303-1');
+            </script>
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Raspberry Pi K3s Setup</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mail@viaops.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/viaops/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/viaops/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/viaops/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/viaops/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Raspberry Pi K3s Setup</h2>
+        <h5>June 4, 2019</h5>
+        
+
+    </div>
+
+    <div align="start" class="content"><p>For a while now I was after getting my own self hosted Kubernetes cluster, and with the Raspberry Pi it is now possible. This is a note to self in case I will have to replicate
+What you need (Must Haves)</p>
+<ul>
+<li>Raspberry PI (2/3). Minimum of 2 (1 master and 1 worker)</li>
+<li>Power Cable (Micro USB, same as the old android chargers)</li>
+<li>Ethernet Cable (Can be done with wireless, but ethernet cable makes it easier)</li>
+<li>Micro SD Card (Minimum of 8gb)</li>
+</ul>
+<p>What you want (Nice to have)</p>
+<ul>
+<li>Raspberry PI 3 Model b+. 4 (1 master and 5 worker)</li>
+<li>Gigabit Ethernet Switch.</li>
+<li>Short (1 ft) ethernet cable</li>
+<li>Short (1 ft) Power cable</li>
+<li>Multiport USB Charging HUB. (I used a 10 port anker hub)</li>
+<li>Cluster Case (Keeps everything nice and clean)</li>
+<li>Micro SD Card (32gb each)</li>
+</ul>
+<p>Software Requirement</p>
+<ul>
+<li>Etcher</li>
+<li>Raspbian Buster Lite</li>
+</ul>
+<ol start="7">
+<li>
+<p>You should see something similar. Go to Network Options &gt; Hostname. And change the hostname to anything you want. I named mine k8s-master-1, k8s-node-1, k8s-node-2 and k8s-node-3.</p>
+</li>
+<li>
+<p>Once you are done with that, you should set up Localization Options. Although it is optional for our use-case. It is just good practice. Also without it you won’t be able to enable wifi.</p>
+</li>
+<li>
+<p>Once done the pi will reboot.</p>
+</li>
+<li>
+<p>ssh in again. We will give our device a static ip so it keeps the ip between reboots.</p>
+</li>
+</ol>
+<p>cat &raquo; /etc/dhcpcd.conf</p>
+<p>Find your device IP. It will be in the form of x.x.x.x. You can find your device ip (on a mac) using ifconfig | grep inet . My mac ip was 192.168.0.26 so my ip format is like 192.168.0.x .</p>
+<p>Paste the following code block</p>
+<p>interface eth0
+static ip_address=x.x.x.y/24
+static routers=x.x.x.1
+static domain_name_servers=1.1.1.1</p>
+<p>Where x.x.x is same as your device ip and y is the ip you want. I put 100 for master and 101,102 and 103 for the rest. Reboot with sudo reboot</p>
+<p>When the devices turn on they should reflect the new ips.</p>
+<p>This concludes the initial setup. Next we do the general device setup.
+Common Setup</p>
+<p>Now we need to setup all the RPi&rsquo;s to make them ready to act as a Kubernetes node.</p>
+<p>Installing docker:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -sSL get.docker.com | sh <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>sudo usermod pi -aG docker <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>newgrp docker</code></pre></div></p>
+<p>Disabling swap. Kubernetes requires swap to be disabled. Please note on Raspbian Buster you have to uninstall dphys.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dphys-swapfile swapoff <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>sudo dphys-swapfile uninstall <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>sudo update-rc.d dphys-swapfile remove <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>sudo apt purge dphys-swapfile</code></pre></div></p>
+<p>We can check swap disable was a success by the following command returning empty</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo swapon --summary</code></pre></div>
+<ol start="3">
+<li>Next we edit the /boot/cmdline.txt file. And append the following in the end of the file. This needs to be in the same line as all the other text in the file. Do not create a new file.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cgroup_enable<span style="color:#f92672">=</span>cpuset cgroup_memory<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> cgroup_enable<span style="color:#f92672">=</span>memory</code></pre></div>
+<ol start="4">
+<li>
+<p>Reboot with sudo reboot</p>
+</li>
+<li>
+<p>SSH in again. Here we start deploying K3s with the Rancher image.</p>
+</li>
+<li>
+<p>On the master and all the workers run the following command</p>
+</li>
+</ol>
+<p>sudo sysctl net.bridge.bridge-nf-call-iptables=1</p>
+<p>Reasoning for this is explained better in this issue
+Worker Node Setup</p>
+<p>From each worker node run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo kubeadm join --token &lt;token&gt; &lt;master-node-ip&gt;:6443 --discovery-token-ca-cert-hash sha256:&lt;sha256&gt;</code></pre></div>
+<p>And after a few moment, run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get nodes</code></pre></div>
+<p>and you should see something like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME      STATUS   ROLES    AGE    VERSION
+
+master    Ready    master   23h    v1.16.3-k3s.2
+worker1   Ready    &lt;none&gt;   116m   v1.16.3-k3s.2
+worker2   Ready    &lt;none&gt;   111m   v1.16.3-k3s.2
+worker3   Ready    &lt;none&gt;   105m   v1.16.3-k3s.2
+worker4   Ready    &lt;none&gt;   111m   v1.16.3-k3s.2
+worker5   Ready    &lt;none&gt;   111m   v1.16.3-k3s.2</code></pre></div>
+<p>And with this the cluster setup is done.
+Additional Steps</p>
+<p>We can access our cluster now, which is awesome. But we can only do it while sshed in the master node. We should change that.</p>
+<p>We can copy the config from the master to our local machine. Use scp . More info on this on this article.</p>
+<p>scp <a href="mailto:pi@x.x.x.100">pi@x.x.x.100</a>:.kube/config .</p>
+<p>Running the command from you local directory will copy the config file in that directory from master-node.</p>
+<p>If you have kubectl installed in you local machine, you can then setup kubeconfig by either overriding the config file in $HOME/.kube/config or you can add the file on top of the existing config (if you have it) by</p>
+<p>export KUBECONFIG=<!-- raw HTML omitted -->:$HOME/.kube/config</p>
+<p>This way you can keep you kubeconfig and switch to rpi cluster config when needed. You can also look into adding the config in the file instead of overriding it. More info here.</p>
+<p>This is a pretty decent cluster that one can use for learning purposes. With some volume mounted you can do some pretty cool stuff. I will try out some stuff in the upcoming days. Will also try to get the dashboard running.</p>
+<p>Updates to follow.</p>
+</div>
+
+    
+    
+    
+
+    
+    
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

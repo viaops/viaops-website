@@ -1,20 +1,18 @@
 baseURL = "https://www.viaops.com/"
 languageCode = "en-us"
 title = "ViaOps"
-theme = "minimal"
+theme = "hyde-hyde"
 googleAnalytics = "UA-162103303-1"
+
+summarylength = 30
+paginate = 5
 
 [params]
     author = "viaops"
     description = "DevOps/SRE Incubator"
-    githubUsername = "viaops"
-    accent = "blue"
-    showBorder = false
-    backgroundColor = "white"
-    font = "Inconsolata" # should match the name on Google Fonts!
-    highlight = true
-    highlightStyle = "Solarized Dark"
-    highlightLanguages = ["go", "python", "bash", "javascript", "ruby"]
+    authorimage = "/images/profile.png"
+    highlightjs = true
+    highlightjsstyle = "dracula"
 
 [[menu.main]]
     url = "/"
@@ -40,27 +38,11 @@ googleAnalytics = "UA-162103303-1"
 # The "name" field should match the name of the icon in Font Awesome.
 # The list of available icons can be found at http://fontawesome.io/icons.
 
-[[menu.icon]]
-    url = "mail@viaops.com"
-    name = "envelope-o"
-    weight = 1
-
-[[menu.icon]]
-    url = "https://github.com/viaops/"
-    name = "github"
-    weight = 2
-
-[[menu.icon]]
-    url = "https://twitter.com/viaops/"
-    name = "twitter"
-    weight = 3
-
-[[menu.icon]]
-    url = "https://www.linkedin.com/in/viaops/"
-    name = "linkedin"
-    weight = 4
-
-[[menu.icon]]
-    url = "https://www.stackoverflow.com/viaops/"
-    name = "stack-overflow"
-    weight = 5
+[params.social]
+    github = "<viaops>"
+    linkedin = "viaops"
+    twitter = "viaops"
+    facebook = "viaops"
+    stackoverflow = "viaops"
+    telegram = "viaops"
+    email = "mail@viaops.com"
