@@ -3,50 +3,50 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://viaops.com/project/project1/</loc>
+    <loc>https://www.viaops.com/project/project1/</loc>
   </url>
   
   <url>
-    <loc>https://viaops.com/post/first-post/</loc>
+    <loc>https://www.viaops.com/post/first-post/</loc>
     <lastmod>2019-06-04T21:55:06+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://viaops.com/post/</loc>
+    <loc>https://www.viaops.com/post/</loc>
     <lastmod>2019-06-04T21:55:06+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://viaops.com/</loc>
+    <loc>https://www.viaops.com/</loc>
     <lastmod>2019-06-04T21:55:06+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://viaops.com/about/</loc>
+    <loc>https://www.viaops.com/about/</loc>
   </url>
   
   <url>
-    <loc>https://viaops.com/categories/</loc>
+    <loc>https://www.viaops.com/categories/</loc>
   </url>
   
   <url>
-    <loc>https://viaops.com/tags/go/</loc>
+    <loc>https://www.viaops.com/tags/go/</loc>
   </url>
   
   <url>
-    <loc>https://viaops.com/tags/golang/</loc>
+    <loc>https://www.viaops.com/tags/golang/</loc>
   </url>
   
   <url>
-    <loc>https://viaops.com/tags/hugo/</loc>
+    <loc>https://www.viaops.com/tags/hugo/</loc>
   </url>
   
   <url>
-    <loc>https://viaops.com/project/</loc>
+    <loc>https://www.viaops.com/project/</loc>
   </url>
   
   <url>
-    <loc>https://viaops.com/tags/</loc>
+    <loc>https://www.viaops.com/tags/</loc>
   </url>
   
 </urlset>

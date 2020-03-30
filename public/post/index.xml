@@ -2,22 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ViaOps</title>
-    <link>https://viaops.com/post/</link>
+    <link>https://www.viaops.com/post/</link>
     <description>Recent content in Posts on ViaOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Jun 2019 21:55:06 +0100</lastBuildDate>
     
-	<atom:link href="https://viaops.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.viaops.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>First Poist</title>
-      <link>https://viaops.com/post/first-post/</link>
+      <link>https://www.viaops.com/post/first-post/</link>
       <pubDate>Tue, 04 Jun 2019 21:55:06 +0100</pubDate>
       
-      <guid>https://viaops.com/post/first-post/</guid>
-      <description>This is the first post</description>
+      <guid>https://www.viaops.com/post/first-post/</guid>
+      <description>This is the first post
+{{highlight bash}}
+#!/bin/bash
+CONFIG ACCEPTED_HOSTS=&amp;rdquo;/root/.hag_accepted.conf&amp;rdquo; BE_VERBOSE=false
+if [ &amp;ldquo;$UID&amp;rdquo; -ne 0 ] then echo &amp;ldquo;Superuser rights required&amp;rdquo; exit 2 fi
+genApacheConf(){ echo -e &amp;ldquo;# Host ${HOME_DIR}$1/$2 :&amp;rdquo; }
+echo &amp;lsquo;&amp;ldquo;quoted&amp;rdquo;&amp;rsquo; | tr -d &amp;quot; &amp;gt; text.txt
+{{endhighlight}}</description>
     </item>
     
   </channel>

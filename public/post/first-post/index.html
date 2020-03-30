@@ -10,7 +10,7 @@
         <style>
 
     html body {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Inconsolata', sans-serif;
         background-color: white;
     }
 
@@ -22,13 +22,13 @@
 </style>
 
 
-<link rel="stylesheet" href="https://viaops.com/css/main.css">
+<link rel="stylesheet" href="https://www.viaops.com/css/main.css">
 
 
 
 
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css"> 
@@ -69,6 +69,14 @@
  <meta name="generator" content="Hugo 0.68.0" />
         
 
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162103303-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments)};
+              gtag('js', new Date());
+              gtag('config', 'UA-162103303-1');
+            </script>
         
 
         
@@ -136,6 +144,21 @@
     </div>
 
     <div align="start" class="content"><p>This is the first post</p>
+<p>{{highlight bash}}</p>
+<p>#!/bin/bash</p>
+<h6 id="config">CONFIG</h6>
+<p>ACCEPTED_HOSTS=&rdquo;/root/.hag_accepted.conf&rdquo;
+BE_VERBOSE=false</p>
+<p>if [ &ldquo;$UID&rdquo; -ne 0 ]
+then
+echo &ldquo;Superuser rights required&rdquo;
+exit 2
+fi</p>
+<p>genApacheConf(){
+echo -e &ldquo;# Host ${HOME_DIR}$1/$2 :&rdquo;
+}</p>
+<p>echo &lsquo;&ldquo;quoted&rdquo;&rsquo; | tr -d &quot; &gt; text.txt</p>
+<p>{{endhighlight}}</p>
 </div>
 
     
@@ -143,28 +166,6 @@
     
 
     
-    
-        <h4 class="page-header">Comments</h4>
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "viaops" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
 
 </main>
