@@ -3,6 +3,7 @@ node {
     remote.name = 'Viaops Website'
     remote.host = 'www.viaops.com'
     remote.user = 'root'
+    remote.allowAnyHosts = true
     def hugo
 
     stage('Clone repository') {
