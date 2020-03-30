@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "ViaOps"
 theme = "minimal"
 disqusShortname = "viaops" # delete this to disable disqus comments
-googleAnalytics = ""
+googleAnalytics = "UA-162103303-1"
 
 [params]
     author = "viaops"
