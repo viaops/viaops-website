@@ -1,8 +1,9 @@
 FROM viaops/hugo
+
 COPY . /srv
-RUN git submodule add https://github.com/calintat/minimal.git themes/minimal
-RUN git submodule init
-RUN git submodule update
+
+RUN rm -rf themes/*
+
 RUN hugo
 
 FROM nginx:alpine
