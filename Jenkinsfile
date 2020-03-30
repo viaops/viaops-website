@@ -26,10 +26,5 @@ node {
     stage('Deploy image') {
         sh 'ssh root@www.viaops.com "docker stop viaops-website && docker rm viaops-website && docker run -dti -p 80:80 --name viaops-website viaops/website:latest"'
     }
-
-    post { 
-        always { 
-            cleanWs()
-        }
-    }
+    
 }
