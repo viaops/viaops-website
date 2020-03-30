@@ -2,17 +2,16 @@ baseURL = "https://www.viaops.com/"
 languageCode = "en-us"
 title = "ViaOps"
 theme = "minimal"
-disqusShortname = "viaops" # delete this to disable disqus comments
 googleAnalytics = "UA-162103303-1"
 
 [params]
     author = "viaops"
     description = "DevOps/SRE Incubator"
     githubUsername = "viaops"
-    accent = "blue"
+    accent = "grey"
     showBorder = false
     backgroundColor = "white"
-    font = "Roboto" # should match the name on Google Fonts!
+    font = "Inconsolata" # should match the name on Google Fonts!
     highlight = true
     highlightStyle = "dracula"
     highlightLanguages = ["go", "python", "bash", "javascript", "ruby"]
