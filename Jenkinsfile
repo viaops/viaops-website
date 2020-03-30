@@ -24,6 +24,6 @@ node {
     }
 
     stage('Deploy image') {
-        sh 'ssh root@www.viaops.com "docker stop \$(docker ps -a -q) ; docker rm \$(docker ps -a -q) ; docker run -dti -p 80:80 --name viaops-website viaops/website"'
+        sh 'ssh root@www.viaops.com "docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q) && docker run -dti -p 80:80 --name viaops-website viaops/website"'
     }
 }
