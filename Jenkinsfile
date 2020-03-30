@@ -1,10 +1,5 @@
 node {
-    def remote = [:]
-    remote.name = 'Viaops Website'
-    remote.host = 'www.viaops.com'
-    remote.user = 'root'
-    remote.password = ''
-    remote.allowAnyHosts = true
+
     def hugo
 
     stage('Clone repository') {
@@ -29,6 +24,6 @@ node {
     }
 
     stage('Deploy image') {
-        sshCommand remote: remote, command: "docker stop \$(docker ps -a -q) ; docker rm \$(docker ps -a -q) ; docker run -dti -p 80:80 --name viaops-website viaops/website"
+        sh 'ssh root@www.viaops.com "docker stop \$(docker ps -a -q) ; docker rm \$(docker ps -a -q) ; docker run -dti -p 80:80 --name viaops-website viaops/website"'
     }
 }
